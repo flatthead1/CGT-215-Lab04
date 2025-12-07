@@ -76,6 +76,8 @@ void arithmetic() {
 	cout << " = " << sum << endl;
 
 }
+
+// Geometric series function
 void geometric() {
 	int r;
 	int a;
@@ -106,6 +108,8 @@ void geometric() {
 
 	cout << " = " << product << endl;
 }
+
+// Main function
 int main() {
 	int choice;
 	char again;
