@@ -11,27 +11,100 @@ void printMenu() {
 	cout << "\t4. Exit" << endl;
 	cout << "Your Selection: ";
 }
+
+// Factorial function
 void factorial() {
-	// I recommend writing your factorial code here
 	int n;
 
+	// Gets user input for factorial function
 	cout << "Factorial: " << endl;
 	cout << "Enter a number: ";
 	cin >> n;
-	if (n < 0) {
+	// Validates user input
+	while (n < 0) {
 		cout << "Nice try, please enter a POSITIVE number...: ";
 		cin >> n;
 	}
-	if (n == 0 || n == 1) {
-		cout << "The factorial of " << n << " is 1" << endl;
+
+	long long fact = 1;
+
+	cout << n << "! = ";
+	// Calculates the factorial
+	for (int i = 1; i <= n; ++i) {
+		fact *= i;
+		cout << i;
+		if (i < n) {
+			cout << " * ";
+		}
 	}
-	cout << "IT WORKED!!!" << endl;
+	cout << " = " << fact << endl;
+	
 }
+
+// Arithmetic series function
 void arithmetic() {
-	// I recommend writing your arithmetic series code here
+	int d;
+	int s;
+	int e;
+
+	// Gets user input for arithmetic series variables
+	// d = starting number, s = step size, e = number of elements
+	cout << "Arithmetic Series : " << endl;
+	cout << "Enter a number to start at: ";
+	cin >> d;
+
+	cout << "Enter a number to add each time: ";
+	cin >> s;
+	
+	cout << "Enter the number of elements in the series: ";
+	cin >> e;
+
+	long long sum = 0;
+
+	for (int i = 0; i < e; ++i) {
+		cout << d;
+		// Ensures plus sign isn't printed last
+		if (i < e - 1) {
+			cout << " + ";
+		}
+		// Adds current "d" to sum and updates "d" for next element
+		// Starts by adding initial "d" value, follows series from there
+		sum += d;
+		d += s;
+	}
+
+	cout << " = " << sum << endl;
+
 }
 void geometric() {
-	// I recommend writing your geometric series code here
+	int r;
+	int a;
+	int e;
+
+	// Gets user input for geometric series variables
+	// r = starting number, a = multiplied each time, e = number of elements
+	cout << "Geometric Series: " << endl;
+	cout << "Enter a number to start at: ";
+	cin >> r;
+
+	cout << "Enter a number to multiply by each time: ";
+	cin >> a;
+
+	cout << "Enter the number of elements in the series: ";
+	cin >> e;
+
+	long long product = 0;
+
+	for (int i = 0; i < e; ++i) {
+		cout << r;
+		if (i < e - 1) {
+			cout << " + ";
+		}
+		product += r;
+		r *= a;
+	}
+
+	cout << " = " << product << endl;
 }
 int main() {
 	int choice;
